@@ -1,13 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import HeroSection from '../components/HeroSection';
-import StatsSection from '../components/StatsSection';
-import ServicesSection from '../components/ServicesSection/ServicesSection';
-import PricingSection from '../components/PricingSection/PricingSection';
-import TestimonialsSection from '../components/TestimonialsSection/TestimonialsSection';
-import FAQSection from '../components/FAQSection/FAQSection';
-import Footer from '../components/Footer/Footer';
+import dynamic from 'next/dynamic';
+import ClientOnly from '../components/ClientOnly';
+import LoadingSection from '../components/LoadingSection';
+
+// Dynamic imports with no SSR for components that use browser APIs
+const HeroSection = dynamic(() => import('../components/HeroSection'), { ssr: false });
+const StatsSection = dynamic(() => import('../components/StatsSection'), { ssr: false });
+const ServicesSection = dynamic(() => import('../components/ServicesSection/ServicesSection'), { ssr: false });
+const PricingSection = dynamic(() => import('../components/PricingSection/PricingSection'), { ssr: false });
+const TestimonialsSection = dynamic(() => import('../components/TestimonialsSection/TestimonialsSection'), { ssr: false });
+const FAQSection = dynamic(() => import('../components/FAQSection/FAQSection'), { ssr: false });
+const Footer = dynamic(() => import('../components/Footer/Footer'), { ssr: false });
 
 export default function Home() {
   const [isFooterInView, setIsFooterInView] = useState(false);
@@ -30,17 +35,37 @@ export default function Home() {
 
   return (
     <main>
-      <HeroSection 
-        onGetStarted={handleGetStarted}
-        onWatchDemo={handleWatchDemo}
-        isFooterInView={isFooterInView}
-      />
-      <StatsSection />
-      <ServicesSection />
-      <PricingSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <Footer onFooterInView={handleFooterInView} />
+      <ClientOnly fallback={<LoadingSection className="bg-gray-50" />}>
+        <HeroSection 
+          onGetStarted={handleGetStarted}
+          onWatchDemo={handleWatchDemo}
+          isFooterInView={isFooterInView}
+        />
+      </ClientOnly>
+      
+      <ClientOnly fallback={<LoadingSection className="bg-white" />}>
+        <StatsSection />
+      </ClientOnly>
+      
+      <ClientOnly fallback={<LoadingSection className="bg-gray-50" />}>
+        <ServicesSection />
+      </ClientOnly>
+      
+      <ClientOnly fallback={<LoadingSection className="bg-white" />}>
+        <PricingSection />
+      </ClientOnly>
+      
+      <ClientOnly fallback={<LoadingSection className="bg-gray-50" />}>
+        <TestimonialsSection />
+      </ClientOnly>
+      
+      <ClientOnly fallback={<LoadingSection className="bg-white" />}>
+        <FAQSection />
+      </ClientOnly>
+      
+      <ClientOnly fallback={<LoadingSection className="bg-gray-50" />}>
+        <Footer onFooterInView={handleFooterInView} />
+      </ClientOnly>
     </main>
   );
 }
