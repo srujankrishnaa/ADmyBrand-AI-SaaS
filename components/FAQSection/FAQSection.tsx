@@ -136,7 +136,6 @@ const FAQSection: React.FC<FAQSectionProps> = ({ className = '' }) => {
                           loop
                           src="/assets/animations/underline-lottie.json"
                           style={{ height: '40px', width: '120px' }}
-                          onError={(error) => console.error('Underline animation error:', error)}
                         />
                       </div>
                     </span>
@@ -183,7 +182,6 @@ const FAQSection: React.FC<FAQSectionProps> = ({ className = '' }) => {
                   loop
                   src="/assets/animations/paper-airplane.json"
                   style={{ height: '75px', width: '75px' }}
-                  onError={(error) => console.error('Paper airplane animation error:', error)}
                 />
               </div>
             </motion.div>
