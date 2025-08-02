@@ -23,11 +23,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const [animationStep, setAnimationStep] = useState(0);
 
   useEffect(() => {
-    const timer1 = setTimeout(() => setAnimationStep(1), 1200); // Logo moves to nav
-    const timer2 = setTimeout(() => setAnimationStep(2), 2500); // "The Next Level" appears
-    const timer3 = setTimeout(() => setAnimationStep(3), 3800); // "Marketing For" appears
-    const timer4 = setTimeout(() => setAnimationStep(4), 5000); // "Your Brand" with arrow appears + avatars start
-    const timer5 = setTimeout(() => setAnimationStep(5), 6500); // Final content appears
+    const timer1 = setTimeout(() => setAnimationStep(1), 800); // Logo moves to nav (faster)
+    const timer2 = setTimeout(() => setAnimationStep(2), 1600); // "The Next Level" appears (faster)
+    const timer3 = setTimeout(() => setAnimationStep(3), 2400); // "Marketing For" appears (faster)
+    const timer4 = setTimeout(() => setAnimationStep(4), 3200); // "Your Brand" with arrow appears + avatars start (faster)
+    const timer5 = setTimeout(() => setAnimationStep(5), 4000); // Final content appears (faster)
 
     return () => {
       clearTimeout(timer1);

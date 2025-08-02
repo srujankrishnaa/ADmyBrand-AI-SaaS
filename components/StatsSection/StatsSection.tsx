@@ -27,7 +27,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({ className = '' }) => {
             className="space-y-8"
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
           >
             {/* Brands Onboarded */}
             <div className="text-left">
@@ -35,7 +35,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({ className = '' }) => {
                 className="text-4xl lg:text-5xl font-bold text-black mb-2"
                 initial={{ scale: 0.8 }}
                 animate={isInView ? { scale: 1 } : { scale: 0.8 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
               >
                 2.5k+
               </motion.h3>
@@ -48,7 +48,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({ className = '' }) => {
                 className="text-4xl lg:text-5xl font-bold text-black mb-2"
                 initial={{ scale: 0.8 }}
                 animate={isInView ? { scale: 1 } : { scale: 0.8 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
               >
                 12+
               </motion.h3>
@@ -61,7 +61,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({ className = '' }) => {
             className="flex flex-col justify-center space-y-8"
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
           >
             {/* Subheading */}
             <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed">
@@ -80,7 +80,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({ className = '' }) => {
           className="bg-white rounded-3xl shadow-lg border border-gray-100 h-[350px] relative overflow-hidden mb-12"
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.95 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
         >
           {/* Background Landscape - Pops up first */}
           <motion.div
@@ -88,9 +88,9 @@ const StatsSection: React.FC<StatsSectionProps> = ({ className = '' }) => {
             initial={{ y: "100%", scale: 0.7, opacity: 0 }}
             animate={isInView ? { y: "0%", scale: 1, opacity: 1 } : { y: "100%", scale: 0.7, opacity: 0 }}
             transition={{ 
-              duration: 1.8, 
+              duration: 1.0, 
               ease: "easeOut", 
-              delay: 1.2 
+              delay: 0.8 
             }}
           >
             <img 
@@ -114,9 +114,9 @@ const StatsSection: React.FC<StatsSectionProps> = ({ className = '' }) => {
             initial={{ y: "100%", scale: 0.4, opacity: 0 }}
             animate={isInView ? { y: "0%", scale: 1, opacity: 1 } : { y: "100%", scale: 0.4, opacity: 0 }}
             transition={{ 
-              duration: 1.8, 
+              duration: 1.0, 
               ease: "easeOut", 
-              delay: 3.5 
+              delay: 1.8 
             }}
           >
             <img 
@@ -163,7 +163,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({ className = '' }) => {
           className="flex justify-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 1.0, ease: "easeOut", delay: 5.5 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 2.8 }}
         >
           <div 
             className="relative px-12 py-6 rounded-3xl text-center overflow-hidden"
@@ -193,7 +193,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({ className = '' }) => {
           className="flex justify-center mt-8"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-          transition={{ duration: 1.2, ease: "easeOut", delay: 6.5 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 3.4 }}
         >
           <div className="w-full max-w-4xl h-32 flex items-center justify-center">
             <Player

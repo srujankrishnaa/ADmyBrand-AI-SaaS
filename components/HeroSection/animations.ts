@@ -6,8 +6,8 @@ export const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.3,
-      staggerChildren: 0.4
+      duration: 0.2,
+      staggerChildren: 0.2
     }
   }
 };
@@ -19,13 +19,13 @@ export const logoVariants: Variants = {
     x: 0,
     y: 0,
     opacity: 1,
-    transition: { duration: 1.0, ease: "easeOut" }
+    transition: { duration: 0.6, ease: "easeOut" }
   },
   navigation: {
     scale: 1,
     x: -200,
     y: -100,
-    transition: { duration: 0.8, ease: "easeInOut", delay: 0.8 }
+    transition: { duration: 0.5, ease: "easeInOut", delay: 0.4 }
   }
 };
 
@@ -36,20 +36,20 @@ export const textLineVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       ease: "easeOut"
     }
   }
 };
 
-// Avatar cards animation - top to bottom
+// Avatar cards animation - top to bottom - faster
 export const cardContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3
+      staggerChildren: 0.1,
+      delayChildren: 0.1
     }
   }
 };
@@ -61,7 +61,7 @@ export const cardVariants: Variants = {
     y: 0,
     scale: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       ease: "easeOut"
     }
   }
